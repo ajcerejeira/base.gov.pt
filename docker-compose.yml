@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+
+  scrapy:
+      build: .
+      hostname: "baseGovScrap"
+      command: python go-spider.py
