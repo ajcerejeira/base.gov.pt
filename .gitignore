@@ -103,3 +103,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+#Pycharm files
+.idea/
+
+# Output files
+contracts/output

@@ -11,19 +11,22 @@ from scrapy.contrib.exporter import CsvItemExporter
 
 class ContractsPipeline(object):
     def open_spider(self, spider):
-        self.contracts_file = open('contracts.csv', 'w+b')
+
+        OUTPUT_FOLDER = "output/"
+
+        self.contracts_file = open(OUTPUT_FOLDER+'contracts.csv', 'w+b')
         self.contracts_csv = CsvItemExporter(self.contracts_file)
 
-        self.contestants_file = open('contestants.csv', 'w+b')
+        self.contestants_file = open(OUTPUT_FOLDER+'contestants.csv', 'w+b')
         self.contestants_csv = CsvItemExporter(self.contestants_file)
 
-        self.invitees_file = open('invitees.csv', 'w+b')
+        self.invitees_file = open(OUTPUT_FOLDER+'invitees.csv', 'w+b')
         self.invitees_csv = CsvItemExporter(self.invitees_file)
 
-        self.documents_file = open('documents.csv', 'w+b')
+        self.documents_file = open(OUTPUT_FOLDER+'documents.csv', 'w+b')
         self.documents_csv = CsvItemExporter(self.documents_file)
 
-        self.places_file = open('places.csv', 'w+b')
+        self.places_file = open(OUTPUT_FOLDER+'places.csv', 'w+b')
         self.places_csv = CsvItemExporter(self.places_file)
 
     def close_spider(self, spider):
